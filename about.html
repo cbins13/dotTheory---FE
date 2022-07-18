@@ -3,29 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <title>About</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <title>About - Together</title>
 </head>
-<body>
-    <main>
+
+<body class="page-about">
+    <main class="page-main">
     <!--The header/navbar-->
-    <header>
-        <nav>
-            <a>Work</a>
-            <a>Services</a>
-            <a>About</a>
-            <a>Careers</a>
-            <a>Contact</a>
-        </nav>
-    </header>
     
-    <h1>* About Us</h1>
-    <!--The slogan-->
-    <div>
-        <h1><span>
-            A tech-focused <br> creative agency.
-        </span></h1>
+    <div class="container">
+        <header>
+            <h1 class="header-logo"><a href="index.html">together</a></h1>
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
     </div>
+    
+    <section class="about-slogan-statement text-base">
+        <h1 class="to-uppercase text-15px"><span class="accent-text"> * </span> About Us</h1>
+        <!--The slogan-->
+        <div>
+            <h1><span>
+                A tech-focused <br> creative agency.
+            </span></h1>
+        </div>
+    </section>
 
     <!--The project showcase-->
     <section class ="about-image-gallery">
@@ -198,64 +207,69 @@
         </div>
     </section>
 
-    <!--The comments component-->
-    <section>
-        <div>
-            Comments go here.
+    <section id="footer-cta" class="text-white ptb-5rem bg-midnight">
+        <div class="flex centered-item flex-row justify-space-between plr-6rem">
+            <h3 class="flex centered-item font-serif text-40px text-left mr-3rem lh-135"><span class="accent-text"> * </span> Let's make something new.</h3>
+            <a class="font-serif button centered-item button-midnight button-large text-center">Contact us</a>
         </div>
     </section>
-    
-    <!--The CTA-->
-    <section>
-        <div>
-            *
-            <h3>Let's make something new.</h3>
-            <a>Contact us</a>
-        </div>
-    </section>
-    
-    <!--The footer divider-->
-    <div>
-
+        
+    <div class="footer-separator bg-midnight plr-6rem">
+        <div class="border border-bottom"></div>
     </div>
 
-    <!--The footer-->
-        <footer>
-            Made in London.
-            <a>15-19 Bloomsbury Way, Holborn, London WC1A 2TH</a>
-            <a>+44 (0) 2078 673 712</a>
-            <a>hello@together.agency</a>
+    <div class="bg-midnight text-white pt-4 pb-65 plr-6rem">
+        <footer class="footer-container c-footer">
+            <div class="footer-address">
+                <div class="font-serif text-1hrem mb-2rem">
+                    Made in London.
+                </div>
+                
+                <address class="mb-2hrem not-italic">
+                    <a>15-19 Bloomsbury Way, Holborn, London WC1A 2TH</a>
+                </address> 
 
-            <nav>
-                <a>Work</a>
-                <a>Services</a>
-                <a>About</a>
-                <a>Careers</a>
-                <a>Contact</a>
+                <div class="block">
+                    <a>+44 (0) 2078 673 712</a>
+                </div>
+
+                <div class="block mb-2rem">
+                    <a>hello@together.agency</a>
+                </div>
+            </div>
+
+            <nav class="flex footer-nav to-uppercase">
+                <a class="mr-2rem">Work</a>
+                <a class="mr-2rem">Services</a>
+                <a class="mr-2rem">About</a>
+                <a class="mr-2rem">Careers</a>
+                <a class="mr-2rem">Contact</a>
             </nav>
 
-            <div>
-                <h5>Interesting updates delivered occasionally.</h5>
-                <form>
-                    <input type="email" placeholder="Sign up for our newsletter">
-                    <button type="submit">Join</button>
+            <div class="footer-newsletter">
+                <h5 class="text-base">Interesting updates delivered occasionally.</h5>
+                <form class="footer-newsletter-form justify-space-between">
+                    <input class="rounded flex-auto text-base plr-2rem mr-3rem" type="email" placeholder="Sign up for our newsletter">
+                    <button class="text-white border button-transparent button-midnight text-base text-center flex-auto rounded" type="submit">Join</button>
                 </form>
             </div>
 
-            <div>
-                <a>Dribble</a>
-                <a>Instagram</a>
-                <a>LinkedIn</a>
+            <div class="c-footer-social flex">
+                <div class="social flex">                    
+                    <a>Dribble</a>
+                    <a>Instagram</a>
+                    <a>LinkedIn</a>    
+                </div>
+            
+
+                <nav class="flex">
+                    <a>Privacy</a>
+                    <a>Terms</a>
+                </nav>
             </div>
 
-            <nav>
-                <a>Privacy</a>
-                <a>Terms</a>
-            </nav>
-
-            <div>
-                © Together <br>
-                2022
+            <div class="footer-legal">
+                © Together 2022
             </div>
         </footer>
     </div>
