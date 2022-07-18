@@ -9,13 +9,13 @@ html{
     box-sizing: border-box;
 }
 
+*, :after, :before{
+    box-sizing: border-box;
+    border: 0 solid #e2e8f0;
+}
 body{
     margin: 0;
     padding: 0;
-}
-
-.page-main{
-    margin: 2em;
 }
 
 .container{
@@ -89,8 +89,6 @@ header{
 }
 
 .home-works{
-    margin-top: 5em;
-    margin-bottom: 5em;
     padding-top: 5em;
     padding-bottom: 5em;
 }
@@ -157,14 +155,14 @@ header{
     font-weight: normal;
 }
 
+.ptb-5rem{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
 .mlr-10rem{
     margin-left: 10rem;
     margin-right: 10rem;
-}
-
-.mtb-10rem{
-    margin-top: 10rem;
-    margin-bottom: 10rem;
 }
 
 .home-clients-logos{
@@ -191,8 +189,9 @@ header{
 }
 
 .marquee{
-   height: 20vh; 
+   height: 33vh; 
    overflow: hidden;
+   width: 100%;
 }
 
 .marquee:before, .marquee:after{
@@ -208,12 +207,12 @@ header{
 }
 
 .marquee:before{
-    left: auto;
-    right: -1px;
+    left: 0;
     background-image: linear-gradient(90deg,var(--gradient-color-stops));
 }
 
 .marquee:after{
+    right: 0;
     background-image: linear-gradient(270deg,var(--gradient-color-stops));
 }
 
@@ -221,7 +220,13 @@ header{
     display: flex;
     list-style-type: none;
     height: 100%;
-    animation: scrolling 20s linear infinite;
+    animation: scrolling 30s linear infinite;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.marquee-item{
+    flex-direction: column;
 }
 
 @keyframes scrolling{
@@ -230,10 +235,201 @@ header{
 }
 
 .marquee-content li{
-    width: 20vw;
     flex-shrink: 0;
+    width: 60vh;
 }
 
 .marquee-text{
     font-size: 24px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.justify-space-between{
+    justify-content: space-between;
+}
+
+.bg-midnight{
+    --bg-opacity: 1;
+    background-color: #00122c;
+    background-color: rgba(0,18,44,var(--bg-opacity));
+}
+
+.text-white{
+    --text-opacity: 1;
+    color: #fff;
+    color: rgba(255,255,255,var(--text-opacity));
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.plr-6rem{
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.mr-2rem{
+    margin-right: 2rem;
+}
+
+.lh-135{
+    line-height: 1.35;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.button{
+    display: inline-block;
+    border-style: solid;
+    padding: 1rem 3rem;
+    border-width: 1px;
+    border-radius: 0.25rem;
+    padding: 1rem 3rem;
+}
+
+.button-midnight{
+    border-color: #fff;
+}
+
+.button-large{
+    padding-left: 4rem;
+    min-width: 12rem;
+    padding-right: 4rem;
+    font-size: 16px;
+}
+
+.footer-separator .border{
+    border-color: #1a2a41;
+}
+
+.border{
+    border-width: 1px;
+}
+
+.mtb-5rem{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.mr-3rem{
+    margin-right: 3rem;
+}
+
+.pt-4{
+    padding-top: 4rem;
+}
+
+.pb-65{
+    padding-bottom: 6.5rem;
+}
+
+.footer-container{
+    line-height: 1.8;
+    background-color: #00122c;
+    color: #fff;
+    display: grid;
+    grid-template-areas: "address address address navigation" "newsletter newsletter newsletter newsletter" "social social social social" "legal legal legal legal";
+    grid-template-columns: repeat(4,1fr);
+}
+
+.c-footer{
+    grid-template-areas: "address navigation" "address newsletter" "legal social";
+    grid-template-columns: 1fr 517px;
+}
+
+.text-1hrem{
+    font-size: 1.5em;
+}
+
+.mb-2hrem{
+    margin-bottom: 2.5rem;
+}
+
+.not-italic{
+    font-style: normal;
+}
+
+.block{
+    display: block;
+}
+
+.footer-address{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+.footer-newsletter{
+    align-self: end;
+}
+
+.to-uppercase{
+    text-transform: uppercase;
+}
+
+.footer-newsletter-form{
+    height: 4rem;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.25rem;
+}
+
+.rounded{
+    border-radius: 0.25rem;
+}
+
+.flex-auto{
+    flex: 1 1 auto;
+}
+
+.plr-2rem{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.button-transparent{
+    background-color: transparent;
+}
+
+.c-footer-social{
+    margin-top: 4rem;
+    grid-area: social;
+    justify-content: space-between;
+}
+
+footer .social a:first-of-type{
+    margin-left: 0;
+}
+
+footer .social a{
+    margin-left: 1.5rem;
+}
+
+.c-footer-social nav{
+    margin-left: 2.5rem;
+}
+
+.c-footer-social nav a{
+    margin-left: 2.5rem;
+}
+
+.footer-legal{
+    grid-area: legal;
+    margin-top: 4rem;
 }
