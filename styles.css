@@ -13,13 +13,19 @@ html{
     box-sizing: border-box;
     border: 0 solid #e2e8f0;
 }
+
 body{
     margin: 0;
     padding: 0;
 }
 
 .container{
-    margin: 1.5rem 6rem;
+    margin: 1.5rem 15rem;
+}
+
+.plr-15rem{
+    padding-left: 15rem;
+    padding-right: 15rem;    
 }
 
 .header-logo{
@@ -47,12 +53,16 @@ header{
     text-align: center;
 }
 
-.menu-nav ul>li{
+ul>li{
     list-style-type: none;
     display: inline-block;
 }
 
-.menu-nav ul>li>a{
+ul{
+    display: flex;
+}
+
+ul>li>a{
     display: block;
     text-decoration: none;
     padding: 0em 1.5em 0em 1.5em;
@@ -92,6 +102,26 @@ header{
     font-size: 15px;
 }
 
+.text-38px{
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.004em;
+}
+
+.works-list{
+
+}
+
+.text-iron{
+    --text-opacity: 1;
+    color: #d2d6d9;
+    color: rgba(210,214,217,var(--text-opacity));
+}
+.works-list ul>li>a{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
 .accent-text{
     --text-opacity: 1;
     color: rgba(1,207,201,var(--text-opacity));
@@ -107,23 +137,24 @@ header{
     grid-gap: 1rem;
     gap: 1rem;
     position: relative;
-}
-
-.tile{
-    border:#00122c 2px solid;
+    height: 100vw;
 }
 
 .tile-title{
     margin-block-end: 0;
+    font-size: 28px;
 }
 
 .tile-content{
-    padding: 2.5rem;
+    margin: 2rem;
 }
 
 .tile:first-child{
     grid-column: span 7/span 7;
     grid-row: span 2/ span 2;
+    background-image: url(https://together.agency/static/04f19c2db4895034a5cc9e9a15420602/7a6b6/mosaic.webp);
+    background-position: center;
+    background-size: cover;
 }
 
 .tile:nth-child(2), .tile:nth-child(3){
@@ -131,13 +162,59 @@ header{
     grid-column-start: 8;
 }
 
+.tile:nth-child(2){
+    background-image: url(https://together.agency/static/5b8bf263eca3041ef922bd8ea85282dd/79f3f/unit-tile.png);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.tile:nth-child(3), .tile:nth-child(5), .tile:nth-child(6){
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.tile-vid video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+.tile-vid{
+    height: 100%;
+    position: relative;
+}
+
+.tile:nth-child(4){
+    background-image: url(https://together.agency/static/3dbed29b0592c85b37426295e5ad3cf3/a3154/coast.webp);
+    background-position: center;
+    background-size: cover;
+}
+
 .tile:nth-child(4), .tile:nth-child(5){
     grid-column: span 6/ span 6;
+    color: #00122c;
 }
 
 .tile:nth-child(6){
     grid-column: span 7/ span 7;
 }
+
+.tile:nth-child(7){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 5;
+    --bg-opacity: 1;
+    background-color: rgba(240,243,247,var(--bg-opacity));
+    
+}
+
 
 .tile-cta-links{
     grid-column: span 5/span 5;
@@ -145,6 +222,7 @@ header{
 
 .tile-cta-links h2{
     text-align: center;
+    color: #00122c;
 }
 
 .text-40px{
@@ -443,3 +521,16 @@ footer .social a{
     margin-top: 4rem;
 }
 
+.item {
+    border: 2px solid;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+.about-image-gallery{
+    display: grid;
+}
