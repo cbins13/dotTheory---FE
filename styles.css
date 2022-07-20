@@ -1,6 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+:root{
+    --mosaic: url(https://together.agency/static/aeb77ecdefc51c6acf2ed431a237aabc/de353/00-tile.webp);
+    --coast: url(https://together.agency/static/a39404329550aa6bb475839976555795/4683b/00-tile-1.webp);
+    --unit: url(https://together.agency/static/002fee1d5a7ad9d079e1fd58d4f6923d/4683b/unit-work-tile.webp);
+    --hive: url(https://together.agency/static/ff6c9f7b3731f4acc388a419a591e499/de353/hive-tile2-1.webp);
+    --greenbridge: url(https://together.agency/static/f7b334fc63f428555c2c8b32d4dce471/1dc31/Greenbridge.webp);
+}
 html{
     color: #00122c;
     font-family: Graphik,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -108,10 +115,6 @@ ul>li>a{
     letter-spacing: -0.004em;
 }
 
-.works-list{
-
-}
-
 .text-iron{
     --text-opacity: 1;
     color: #d2d6d9;
@@ -140,19 +143,46 @@ ul>li>a{
     height: 100vw;
 }
 
-.tile-title{
+.tile-title, .works-item-title {
     margin-block-end: 0;
     font-size: 28px;
 }
 
-.tile-content{
+.tile-content, .works-item-content{
     margin: 2rem;
 }
+
+.item:first-child{
+    background-image: var(--mosaic); 
+}
+
+.item:nth-child(2){
+    background-image: var(--coast);
+}
+
+.item:nth-child(3){
+    background-image: var(--unit);
+}
+
+.item:nth-child(5){
+    background-image: var(--hive);
+}
+
+.item:nth-child(10){
+    background-image: var(--greenbridge);
+}
+.item{
+    width: 20vw;
+    height: 45vh;
+    background-position: center;
+    background-size: cover;
+}
+
 
 .tile:first-child{
     grid-column: span 7/span 7;
     grid-row: span 2/ span 2;
-    background-image: url(https://together.agency/static/04f19c2db4895034a5cc9e9a15420602/7a6b6/mosaic.webp);
+    background-image: var(--mosaic);
     background-position: center;
     background-size: cover;
 }
@@ -176,7 +206,7 @@ ul>li>a{
     position: relative;
 }
 
-.tile-vid video{
+video{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -184,7 +214,8 @@ ul>li>a{
     z-index: -1;
 }
 
-.tile-vid{
+.tile-vid, .item-vid{
+    width: 100%;
     height: 100%;
     position: relative;
 }
@@ -527,10 +558,18 @@ footer .social a{
 
 .about-grid {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+    grid-gap: 2rem;
 }
 
 .about-image-gallery{
     display: grid;
+}
+
+.about-grid > .item{
+    display: flex;
+}
+
+.works-item-content>span{
+    font-size: initial;
 }
