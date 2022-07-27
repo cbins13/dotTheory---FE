@@ -20,12 +20,22 @@ html {
     box-sizing: border-box;
 }
 
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+}
+
 *,
 :after,
 :before {
     box-sizing: border-box;
     border: 0 solid #e2e8f0;
     transition: all .1s linear 0;
+}
+
+p {
+    margin: 0;
 }
 
 body {
@@ -47,7 +57,7 @@ body {
     padding-right: 15rem;
 }
 
-.hover\:text-accent:hover{
+.hover\:text-accent:hover {
     --text-opacity: 1;
     color: #01cfc9;
     color: rgba(1, 207, 201, var(--text-opacity));
@@ -136,13 +146,29 @@ ul>li>a {
     font-size: 72px;
 }
 
-.services-slogan-statement{
-    font-size: 50px;
-    max-width: 60%;
+.services-slogan-statement>h1 {
+    font-size: 64px;
+    max-width: 50vw;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
+    line-height: 1.25;
+    letter-spacing: -0.05em;
+}
+
+#services-websites {
+    margin-bottom: 12rem;
+}
+
+.services-statement-small>div:nth-child(1)>h1 {
+    margin-bottom: 2rem;
+}
+
+.services-statement-small>div:nth-child(2)>p {
+    max-width: 45vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .c-hero {
@@ -230,7 +256,8 @@ ul>li>a {
     background-size: cover;
 }
 
-.tile, .item {
+.tile,
+.item {
     transition: transform 0.5s;
 }
 
@@ -242,12 +269,14 @@ ul>li>a {
     background-size: cover;
 }
 
-.tile:hover, .item:hover {
+.tile:hover,
+.item:hover {
     transform: scale(0.85);
     transition: transform 0.5s;
 }
 
-.tile:hover::after, .item:hover::after {
+.tile:hover::after,
+.item:hover::after {
     transition: transform 0.5s;
 }
 
@@ -331,7 +360,7 @@ video {
     line-height: 1.4;
 }
 
-.spacing-05em{
+.spacing-05em {
     letter-spacing: 0.05em;
 }
 
@@ -378,6 +407,12 @@ video {
     position: relative;
     display: block;
     overflow: hidden;
+}
+
+.marquee-small {
+    height: 30vh;
+    margin-top: 0;
+    margin-bottom: 10rem;
 }
 
 .marquee-content {
@@ -514,7 +549,7 @@ video {
     color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.footer-address>address>a{
+.footer-address>address>a {
     width: 50%;
 }
 
@@ -621,7 +656,7 @@ video {
     background: #00122c;
 }
 
-button{
+button {
     border: 1px solid;
     cursor: pointer;
 }
@@ -652,14 +687,14 @@ button{
     color: #fff;
 }
 
-.button-hover:hover{
+.button-hover:hover {
     opacity: 1;
     background-color: #fff;
     color: #00122c;
 }
 
-.button-hover-white:hover{
-    border:1px solid #00122c;
+.button-hover-white:hover {
+    border: 1px solid #00122c;
 }
 
 .footer-separator .border {
@@ -682,41 +717,116 @@ button{
     padding-bottom: 6.5rem;
 }
 
-.grid{
+.grid {
     display: grid;
 }
 
-.services-grid{
-    grid-template-columns: repeat(2,minmax(0,1fr));
+.text-13px {
+    font-size: 13px;
 }
 
-.services-text{
+.services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 60vh;
+    margin-top: 12rem;
+}
+
+.services-text {
     flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    letter-spacing: 0.05em;
 }
 
-.services-img{ 
+
+.services-img {
     flex-direction: column;
+    align-items: flex-end;
 }
 
-.services-img>div{
+.services-img>div {
     background-position: center;
     background-size: cover;
     height: 100%;
+    width: 75%;
 }
 
-#services-brands > div > div > div.services-text.flex{
+#services-brands>div>div>div.services-text.flex {
     order: 1;
 }
 
-.products-img{
+#services-brands>div>div>div.services-img.flex {
+    align-items: flex-start;
+}
+
+.services-text>div:nth-child(1) {
+    margin-bottom: 2rem;
+}
+
+.services-text>div:nth-child(2) {
+    margin-bottom: 3rem;
+}
+
+.services-text-title>h1 {
+    font-size: 40px;
+}
+
+.services-text>div:nth-child(3)>h3 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.services-text>div:nth-child(3)>p {
+    margin-top: 1rem;
+    letter-spacing: normal;
+    font-size: 16px;
+}
+
+.services-statement {
+    margin-top: 2rem;
+}
+
+.services-statement>div>div>div>h1 {
+    font-size: 40px;
+}
+
+.services-showcase {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.works-slogan{
+    margin-top: 15rem;
+    margin-bottom: 3rem;
+}
+
+.services-showcase-carousel {
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+.services-showcase-carousel>div {
+    flex-direction: column;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+    width: 100%;
+}
+
+
+.products-img {
     background-image: var(--services-products);
 }
 
-.brands-img{
+.brands-img {
     background-image: var(--services-brands);
 }
 
-.websites-img{
+.websites-img {
     background-image: var(--services-websites);
 }
 
@@ -817,7 +927,9 @@ footer .social a {
 }
 
 
-.underline, .underline-white, .underline-s{
+.underline,
+.underline-white,
+.underline-s {
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -825,7 +937,7 @@ footer .social a {
     cursor: pointer;
 }
 
-.underline-s::after{
+.underline-s::after {
     margin-bottom: -2px;
     content: "";
     position: absolute;
@@ -837,15 +949,15 @@ footer .social a {
     background-color: #00122c;
     opacity: 0.6;
     transform-origin: bottom right;
-    transition: transform .8s cubic-bezier(.555,.205,.295,.975);
+    transition: transform .8s cubic-bezier(.555, .205, .295, .975);
 }
 
-.underline-s:hover::after{
+.underline-s:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.underline::before{
+.underline::before {
     margin-bottom: -2px;
     content: "";
     position: absolute;
@@ -857,15 +969,15 @@ footer .social a {
     height: 1px;
 }
 
-.underline-white::before{
+.underline-white::before {
     background-color: #fff;
 }
 
-.underline-white::after{
+.underline-white::after {
     background-color: #fff !important;
 }
 
-.underline::after{
+.underline::after {
     margin-bottom: -2px;
     content: "";
     position: absolute;
@@ -877,16 +989,16 @@ footer .social a {
     height: 1px;
     transform: scaleX(0);
     transform-origin: bottom right;
-    transition: transform .8s cubic-bezier(.555,.205,.295,.975)
+    transition: transform .8s cubic-bezier(.555, .205, .295, .975)
 }
 
-.underline:hover::after{
+.underline:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
 
-.footer-nav a{
+.footer-nav a {
     line-height: 1;
     transition: color .4s ease-in-out;
     font-size: 0.9em;
@@ -925,4 +1037,8 @@ footer .social a {
 
 .text-rem {
     font-size: 2.5rem;
+}
+
+.text-2rem {
+    font-size: 2rem;
 }
