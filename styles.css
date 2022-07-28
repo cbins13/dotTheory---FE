@@ -7,9 +7,15 @@
     --hive: url(https://together.agency/static/ff6c9f7b3731f4acc388a419a591e499/de353/hive-tile2-1.webp);
     --greenbridge: url(https://together.agency/static/f7b334fc63f428555c2c8b32d4dce471/1dc31/Greenbridge.webp);
     --trustology: url(https://together.agency/static/fc5c062f6b4a96261ded05eda0ecf713/1dc31/Trustology.webp);
-    --services-products: url(https://together.agency/static/c490b40c146ca6fbc17443de2cc65138/f5c81/products-upscript.webp);
-    --services-brands: url(https://together.agency/static/77c0d42caab84aef4695c6ace3eba415/f5c81/brands-proof.webp);
-    --services-websites: url(https://together.agency/static/8eb5e15ac885a097006ab6d3f32604ea/f5c81/websites-unit.webp);
+    --services-products-upscript: url(https://together.agency/static/c490b40c146ca6fbc17443de2cc65138/f5c81/products-upscript.webp);
+    --services-products-yeshearing: url(https://together.agency/static/3390bbedb9ede12a27a32c6853c45f5f/f5c81/products-yes-hearing-1.webp);
+    --services-products-rxlive: url(https://together.agency/static/01d745c975c0572afc3d53ff09cf93a8/f5c81/products-rxlive.webp);
+    --services-brands--coast: url(https://together.agency/static/f7ea45504d6d0eac00ec5a33d83dce08/f5c81/brands-coast.webp);
+    --services-brands--conductor: url(https://together.agency/static/d10aead413b0a5966fa35af169084ee0/f5c81/brands-conductor.webp);
+    --services-brands--proof: url(https://together.agency/static/77c0d42caab84aef4695c6ace3eba415/f5c81/brands-proof.webp);
+    --services-websites--mosaic: url(https://together.agency/static/7a5b8a2db2243bbb82bdb9c569f2029c/f5c81/websites-mosaic.webp);
+    --services-websites--unit: url(https://together.agency/static/8eb5e15ac885a097006ab6d3f32604ea/f5c81/websites-unit.webp);
+    --services-websites--bigtincan: url(https://together.agency/static/217bed130f2a6df5d5cdcf14a4b8b565/f5c81/websites-bigtincan.webp);
 }
 
 html {
@@ -49,7 +55,7 @@ body {
 }
 
 .container {
-    margin: 1.5rem 15rem;
+    margin: 1.5rem 12rem;
 }
 
 .plr-15rem {
@@ -725,30 +731,11 @@ button {
     font-size: 13px;
 }
 
-.services-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    height: 60vh;
-    margin-top: 12rem;
-}
-
 .services-text {
     flex-direction: column;
     justify-content: center;
     text-align: left;
     letter-spacing: 0.05em;
-}
-
-
-.services-img {
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.services-img>div {
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 75%;
 }
 
 #services-brands>div>div>div.services-text.flex {
@@ -817,9 +804,212 @@ button {
     width: 100%;
 }
 
+.services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 60vh;
+    margin-top: 12rem;
+}
 
-.products-img {
-    background-image: var(--services-products);
+.services-img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    flex-direction: column;
+}
+
+.slides>div{
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.slides{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-label{
+    position: relative;
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 5rem 1rem auto auto auto auto;
+}
+
+.carousel-label>.label-text>a{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.carousel-label>.label-desc>span{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.label-desc>span:nth-of-type(1){
+    animation: fade-text1 20s infinite;
+}
+
+
+.label-desc>span:nth-of-type(2){
+    animation: fade-text2 20s infinite;
+}
+
+
+.label-desc>span:nth-of-type(3){
+    animation: fade-text3 20s infinite;
+}
+
+.label-text{
+    position: relative;
+    grid-column: 1/1
+}
+
+.label-desc{
+    position: relative;
+    grid-column: 3/5; 
+}
+
+.label-icons{
+    position: relative;
+    grid-column-start: 6;
+}
+
+.label-text>span{
+    justify-self: center;
+}
+
+/* Label-text animation */
+.label-text>a:nth-of-type(1){
+    animation: fade-text1 20s infinite;
+}
+
+@keyframes fade-text1 {
+    0%{z-index: 0; opacity: 0;}
+    1%{z-index: 1; opacity: 1;}
+    33%{z-index: 1; opacity: 1;}
+    34%{z-index: 0; opacity: 0;}
+    66%{z-index: 0; opacity: 0;}
+    67%{z-index: 0; opacity: 0;}
+    99%{z-index: 0; opacity: 0;}
+    100%{z-index: 1; opacity: 1;}
+}
+
+.label-text>a:nth-of-type(2){
+    animation: fade-text2 20s infinite;
+}
+
+@keyframes fade-text2 {
+    0%{z-index: 0; opacity: 0;}
+    1%{z-index: 0; opacity: 0;}
+    33%{z-index: 0; opacity: 0;}
+    34%{z-index: 1; opacity: 1;}
+    66%{z-index: 1; opacity: 1;}
+    67%{z-index: 0; opacity: 0;}
+    99%{z-index: 0; opacity: 0;}
+    100%{z-index: 0; opacity: 0;}
+}
+
+.label-text>a:nth-of-type(3){
+    animation: fade-text3 20s infinite;
+}
+
+@keyframes fade-text3 {
+    0%{z-index: 0; opacity: 0;}
+    1%{z-index: 0; opacity: 0;}
+    33%{z-index: 0; opacity: 0;}
+    34%{z-index: 0; opacity: 0;}
+    66%{z-index: 0; opacity: 0;}
+    67%{z-index: 1; opacity: 1;}
+    99%{z-index: 1; opacity: 1;}
+    100%{z-index: 0; opacity: 0;}
+}
+/* Slide animation */
+.slides>*:nth-child(1){
+    animation: fade1 20s infinite;
+}
+
+@keyframes fade1{
+    0%{opacity: 0;}
+    30%{opacity: 1;}
+    60%{opacity: 0;}
+    90%{opacity: 0;}
+    100%{opacity: 0;}
+}
+
+.slides>*:nth-child(2){
+    animation: fade2 20s infinite;
+}
+
+@keyframes fade2{
+    0%{opacity: 0;}
+    30%{opacity: 0;}
+    60%{opacity: 1;}
+    90%{opacity: 0;}
+    100%{opacity: 0;}
+}
+
+.slides>*:nth-child(3){
+    animation: fade3 20s infinite;
+}
+
+@keyframes fade3{
+    0%{opacity: 0;}
+    30%{opacity: 0;}
+    60%{opacity: 0;}
+    90%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.products-img>.products-upscript{
+    background-image: var(--services-products-upscript);
+}
+
+.products-img>.products-yeshearing{
+    background-image: var(--services-products-yeshearing);
+}
+
+.products-img>.products-rxlive{
+    background-image: var(--services-products-rxlive);
+}
+
+.brands-img>.brands-coast{
+    background-image: var(--services-brands--coast);
+}
+
+.brands-img>.brands-conductor{
+    background-image: var(--services-brands--conductor);
+}
+
+.brands-img>.brands-proof{
+    background-image: var(--services-brands--proof);
+}
+
+.websites-img>.websites-mosaic{
+     background-image: var(--services-websites--mosaic);
+}
+
+.websites-img>.websites-bigtincan{
+     background-image: var(--services-websites--bigtincan);
+}
+
+.websites-img>.websites-unit{
+     background-image: var(--services-websites--unit);
+}
+
+/* .products-img {
+    background-image: var(--services-products-upscript);
 }
 
 .brands-img {
@@ -828,7 +1018,7 @@ button {
 
 .websites-img {
     background-image: var(--services-websites);
-}
+} */
 
 .footer-container {
     line-height: 1.8;
