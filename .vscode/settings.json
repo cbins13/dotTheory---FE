@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.CustomBrowser": "firefox",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.fontFamily": "Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true
+}
